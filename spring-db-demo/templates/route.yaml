@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations: {}
+  labels:
+    {{- include "spring-db-demo.app.labels" . | nindent 4 }}
+  name: {{ include "spring-db-demo.fullname" . }}
+spec:
+  port:
+    targetPort: 8080-tcp
+  to:
+    kind: Service
+    name: {{ include "spring-db-demo.name" . }}
+    weight: 100
+  wildcardPolicy: None

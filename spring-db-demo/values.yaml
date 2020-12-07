@@ -1,0 +1,15 @@
+git:
+  ref: main
+  uri: https://github.com/cookcodeblog/spring-db-demo.git
+
+image:
+  name: spring-db-demo
+  version: latest
+
+container:
+  name: spring-db-demo
+
+env:
+  SPRING_PROFILES_ACTIVE: test
+
+replicas: 2
